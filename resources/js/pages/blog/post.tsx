@@ -76,7 +76,7 @@ export default function BlogPost({ post, relatedPosts }: Props) {
                             </Link>
 
                             <div className="flex items-center space-x-4">
-                                <Link href="/blog" className="btn-sky">
+                                <Link href="/blog" className="px-6 py-3 rounded-full font-semibold text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 bg-sky-400">
                                     <ArrowLeft className="w-4 h-4 mr-2" />
                                     Back to Blog
                                 </Link>

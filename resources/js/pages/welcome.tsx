@@ -146,7 +146,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                                             <span>{new Date(featuredPost.published_at).toLocaleDateString()}</span>
                                         </div>
                                     </div>
-                                    <button className="btn-orange w-fit">
+                                    <button className="px-6 py-3 rounded-full font-semibold text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 bg-orange-400 w-fit">
                                         Read Amazing Story! 🚀
                                     </button>
                                 </div>
@@ -169,7 +169,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {latestPosts.map((post) => (
-                            <article key={post.id} className="blog-card" onClick={() => router.get(`/posts/${post.slug}`)}>
+                            <article key={post.id} className="bg-white rounded-lg p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] cursor-pointer transition-all duration-200" onClick={() => router.get(`/posts/${post.slug}`)}>
                                 <div className="relative overflow-hidden rounded-lg border-2 border-black mb-4">
                                     <img
                                         src={post.featured_image}
@@ -182,7 +182,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                                         {post.categories.slice(0, 2).map((category) => (
                                             <span
                                                 key={category.id}
-                                                className="category-tag text-xs"
+                                                className="inline-block px-4 py-2 rounded-full text-xs font-semibold text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200"
                                                 style={{ backgroundColor: category.color }}
                                             >
                                                 #{category.name}
@@ -215,7 +215,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                     </div>
 
                     <div className="text-center mt-12">
-                        <Link href="/blog" className="btn-sky">
+                        <Link href="/blog" className="px-6 py-3 rounded-full font-semibold text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 bg-sky-400">
                             See All Stories! 🌟 <ArrowRight className="w-4 h-4 ml-2 inline" />
                         </Link>
                     </div>
@@ -239,7 +239,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                                 <Link
                                     key={category.id}
                                     href={`/categories/${category.slug}`}
-                                    className="category-tag text-center block py-4 hover:scale-105 transform"
+                                    className="inline-block px-4 py-4 rounded-full text-sm font-semibold text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 text-center block hover:scale-105 transform"
                                     style={{ backgroundColor: category.color }}
                                 >
                                     <div className="font-bold">{category.name}</div>
