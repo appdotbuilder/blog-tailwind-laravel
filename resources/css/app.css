@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
 
 @plugin 'tailwindcss-animate';
 
@@ -78,6 +79,13 @@
 }
 
 :root {
+    --color-mint: #34d399;
+    --color-sky: #60a5fa;
+    --color-orange: #fb923c;
+    --color-yellow: #fbbf24;
+    --color-pink: #f472b6;
+    --color-purple: #a78bfa;
+    
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -155,5 +163,74 @@
 
     body {
         @apply bg-background text-foreground;
+        font-family: 'Fredoka', system-ui, -apple-system, sans-serif;
+    }
+}
+
+@layer utilities {
+    .card-shadow {
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        border: 2px solid black;
+    }
+    
+    .card-shadow-hover:hover {
+        box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+        transform: translate(-2px, -2px);
+        transition: all 0.2s;
+    }
+    
+    .btn-cartoon {
+        @apply px-6 py-3 rounded-full font-semibold text-black border-2 border-black transition-all duration-200;
+        box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+    }
+    
+    .btn-cartoon:hover {
+        box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+        transform: translate(-2px, -2px);
+    }
+    
+    .btn-mint {
+        background-color: var(--color-mint);
+    }
+    
+    .btn-sky {
+        background-color: var(--color-sky);
+    }
+    
+    .btn-orange {
+        background-color: var(--color-orange);
+    }
+    
+    .btn-yellow {
+        background-color: var(--color-yellow);
+    }
+    
+    .btn-pink {
+        background-color: var(--color-pink);
+    }
+    
+    .btn-purple {
+        background-color: var(--color-purple);
+    }
+    
+    .blog-card {
+        @apply bg-white rounded-lg p-4 cursor-pointer transition-all duration-200;
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        border: 2px solid black;
+    }
+    
+    .blog-card:hover {
+        box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+        transform: translate(-2px, -2px);
+    }
+    
+    .category-tag {
+        @apply inline-block px-4 py-2 rounded-full text-sm font-semibold text-black border-2 border-black transition-all duration-200;
+        box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+    }
+    
+    .category-tag:hover {
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        transform: translate(-2px, -2px);
     }
 }
