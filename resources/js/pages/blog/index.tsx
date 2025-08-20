@@ -128,7 +128,7 @@ export default function BlogIndex({ posts, categories }: Props) {
                                         onClick={() => setViewMode('grid')}
                                         className={`p-2 rounded-lg border-2 border-black transition-all ${
                                             viewMode === 'grid' 
-                                                ? 'bg-emerald-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' 
+                                                ? 'bg-emerald-300 shadow-md' 
                                                 : 'bg-white hover:bg-gray-50'
                                         }`}
                                     >
@@ -138,7 +138,7 @@ export default function BlogIndex({ posts, categories }: Props) {
                                         onClick={() => setViewMode('list')}
                                         className={`p-2 rounded-lg border-2 border-black transition-all ${
                                             viewMode === 'list' 
-                                                ? 'bg-emerald-400 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' 
+                                                ? 'bg-emerald-300 shadow-md' 
                                                 : 'bg-white hover:bg-gray-50'
                                         }`}
                                     >
@@ -151,7 +151,7 @@ export default function BlogIndex({ posts, categories }: Props) {
                             {viewMode === 'grid' ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     {posts.data.map((post) => (
-                                        <article key={post.id} className="bg-white rounded-lg p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] cursor-pointer transition-all duration-200" onClick={() => router.get(`/posts/${post.slug}`)}>
+                                        <article key={post.id} className="bg-white rounded-lg p-4 border-2 border-black shadow-lg hover:shadow-xl hover:-translate-x-1 hover:-translate-y-1 cursor-pointer transition-all duration-200" onClick={() => router.get(`/posts/${post.slug}`)}>
                                             <div className="relative overflow-hidden rounded-lg border-2 border-black mb-4">
                                                 <img
                                                     src={post.featured_image}
@@ -164,7 +164,7 @@ export default function BlogIndex({ posts, categories }: Props) {
                                                     {post.categories.slice(0, 2).map((category) => (
                                                         <span
                                                             key={category.id}
-                                                            className="inline-block px-4 py-2 rounded-full text-xs font-semibold text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200"
+                                                            className="inline-block px-2 py-1 rounded-full text-xs font-semibold text-black border border-black"
                                                             style={{ backgroundColor: category.color }}
                                                         >
                                                             #{category.name}
@@ -198,7 +198,7 @@ export default function BlogIndex({ posts, categories }: Props) {
                             ) : (
                                 <div className="space-y-6">
                                     {posts.data.map((post) => (
-                                        <article key={post.id} className="blog-card flex flex-col sm:flex-row gap-6" onClick={() => router.get(`/posts/${post.slug}`)}>
+                                        <article key={post.id} className="bg-white rounded-lg p-4 border-2 border-black shadow-lg hover:shadow-xl hover:-translate-x-1 hover:-translate-y-1 cursor-pointer transition-all duration-200 flex flex-col sm:flex-row gap-6" onClick={() => router.get(`/posts/${post.slug}`)}>
                                             <div className="sm:w-1/3">
                                                 <div className="relative overflow-hidden rounded-lg border-2 border-black h-48 sm:h-32">
                                                     <img
@@ -213,7 +213,7 @@ export default function BlogIndex({ posts, categories }: Props) {
                                                     {post.categories.slice(0, 2).map((category) => (
                                                         <span
                                                             key={category.id}
-                                                            className="category-tag text-xs"
+                                                            className="inline-block px-2 py-1 rounded-full text-xs font-semibold text-black border border-black"
                                                             style={{ backgroundColor: category.color }}
                                                         >
                                                             #{category.name}

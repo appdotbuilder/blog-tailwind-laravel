@@ -39,7 +39,7 @@ class PostFactory extends Factory
      *
      * @return string
      */
-    protected function generateBlogContent(): string
+    public function generateBlogContent(): string
     {
         $paragraphs = [];
         $paragraphCount = random_int(8, 15);

@@ -49,20 +49,18 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
         <>
             <Head title="🎨 Creative Blog - Where Ideas Come Alive!" />
             
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-pink-50">
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-pink-50" style={{ fontFamily: 'Fredoka, sans-serif' }}>
                 {/* Navigation */}
-                <nav className="bg-white border-b-4 border-black shadow-[0_4px_0px_0px_rgba(0,0,0,1)] sticky top-0 z-50">
+                <nav className="bg-white border-b-4 border-black shadow-lg sticky top-0 z-50">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex justify-between items-center h-16">
-                            {/* Logo */}
                             <Link href="/" className="flex items-center space-x-3">
-                                <div className="bg-yellow-400 p-2 rounded-full border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                                <div className="bg-yellow-400 p-2 rounded-full border-2 border-black shadow-md">
                                     <Star className="w-6 h-6 text-black" />
                                 </div>
                                 <span className="text-2xl font-bold text-black">BlogTastic! 🎨</span>
                             </Link>
 
-                            {/* Navigation Links */}
                             <div className="hidden md:flex items-center space-x-6">
                                 <Link href="/" className="text-black font-semibold hover:text-orange-500 transition-colors">
                                     Home
@@ -78,7 +76,6 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                                 </a>
                             </div>
 
-                            {/* Search Bar */}
                             <div className="hidden lg:block">
                                 <form onSubmit={handleSearch} className="relative">
                                     <input
@@ -86,7 +83,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}
                                         placeholder="Search posts... 🔍"
-                                        className="w-64 pl-4 pr-10 py-2 border-2 border-black rounded-full bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:outline-none focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+                                        className="w-64 pl-4 pr-10 py-2 border-2 border-black rounded-full bg-white shadow-md focus:outline-none focus:shadow-lg transition-all"
                                     />
                                     <button
                                         type="submit"
@@ -112,18 +109,18 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                             </p>
                         </div>
 
-                        <div className="bg-white rounded-2xl p-8 card-shadow hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all duration-300 cursor-pointer"
+                        <div className="bg-white rounded-2xl p-8 border-2 border-black shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all duration-300 cursor-pointer"
                              onClick={() => router.get(`/posts/${featuredPost.slug}`)}>
                             <div className="flex flex-col lg:flex-row gap-8">
                                 <div className="lg:w-1/2">
-                                    <div className="relative overflow-hidden rounded-xl border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                    <div className="relative overflow-hidden rounded-xl border-2 border-black shadow-lg">
                                         <img
                                             src={featuredPost.featured_image}
                                             alt={featuredPost.title}
                                             className="w-full h-64 object-cover"
                                         />
                                         <div className="absolute top-4 left-4">
-                                            <span className="bg-orange-400 px-3 py-1 rounded-full text-sm font-semibold text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                                            <span className="bg-orange-400 px-3 py-1 rounded-full text-sm font-semibold text-black border-2 border-black shadow-md">
                                                 ⭐ Featured
                                             </span>
                                         </div>
@@ -146,7 +143,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                                             <span>{new Date(featuredPost.published_at).toLocaleDateString()}</span>
                                         </div>
                                     </div>
-                                    <button className="px-6 py-3 rounded-full font-semibold text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 bg-orange-400 w-fit">
+                                    <button className="px-6 py-3 rounded-full font-semibold text-black bg-orange-400 border-2 border-black hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 w-fit">
                                         Read Amazing Story! 🚀
                                     </button>
                                 </div>
@@ -169,7 +166,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {latestPosts.map((post) => (
-                            <article key={post.id} className="bg-white rounded-lg p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] cursor-pointer transition-all duration-200" onClick={() => router.get(`/posts/${post.slug}`)}>
+                            <article key={post.id} className="bg-white rounded-lg p-4 border-2 border-black shadow-lg hover:shadow-xl hover:-translate-x-1 hover:-translate-y-1 cursor-pointer transition-all duration-200" onClick={() => router.get(`/posts/${post.slug}`)}>
                                 <div className="relative overflow-hidden rounded-lg border-2 border-black mb-4">
                                     <img
                                         src={post.featured_image}
@@ -182,7 +179,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                                         {post.categories.slice(0, 2).map((category) => (
                                             <span
                                                 key={category.id}
-                                                className="inline-block px-4 py-2 rounded-full text-xs font-semibold text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200"
+                                                className="inline-block px-2 py-1 rounded-full text-xs font-semibold text-black border border-black"
                                                 style={{ backgroundColor: category.color }}
                                             >
                                                 #{category.name}
@@ -215,8 +212,8 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                     </div>
 
                     <div className="text-center mt-12">
-                        <Link href="/blog" className="px-6 py-3 rounded-full font-semibold text-black border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 bg-sky-400">
-                            See All Stories! 🌟 <ArrowRight className="w-4 h-4 ml-2 inline" />
+                        <Link href="/blog" className="px-6 py-3 rounded-full font-semibold text-black bg-sky-400 border-2 border-black hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 inline-flex items-center">
+                            See All Stories! 🌟 <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                     </div>
                 </section>
@@ -231,7 +228,6 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                             <p className="text-xl text-gray-700 font-medium">
                                 Find your favorite topics and dive deep into awesome content!
                             </p>
-                            <div className="w-24 h-1 bg-gradient-to-r from-mint-400 to-sky-400 mx-auto mt-4 rounded-full"></div>
                         </div>
 
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
@@ -239,7 +235,7 @@ export default function Welcome({ featuredPost, latestPosts, categories }: Props
                                 <Link
                                     key={category.id}
                                     href={`/categories/${category.slug}`}
-                                    className="inline-block px-4 py-4 rounded-full text-sm font-semibold text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-200 text-center block hover:scale-105 transform"
+                                    className="inline-block px-4 py-4 rounded-full text-center font-semibold text-black border-2 border-black hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 block"
                                     style={{ backgroundColor: category.color }}
                                 >
                                     <div className="font-bold">{category.name}</div>
